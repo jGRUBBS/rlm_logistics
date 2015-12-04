@@ -33,7 +33,7 @@ module RlmLogistics
       attribute :bulk_flag
 
       has_many :addresses
-      has_many :details, as: :lines, fuck: "yes"
+      has_many :details, collection: :line
 
       validates_presence :company_number, :currency, :order_date, :start_date,
                          :cancel_date, :addresses, :details
