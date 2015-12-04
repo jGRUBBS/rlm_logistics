@@ -20,7 +20,16 @@ module RlmLogistics
 
       def serialize_attribute(attribute_hash, attribute)
         return if attributes[attribute.name].nil?
-        attribute_hash[attribute.name.upcase] = _serialize(attributes[attribute.name])
+        name = _attribute_name(attribute)
+        attribute_hash[name] = _serialize(attributes[attribute.name])
+      end
+
+      def _attribute_name(attribute)
+        if attribute.name.to_s == "details"
+          attribute.name
+        else
+          attribute.name
+        end.upcase
       end
 
       def _serialize(serialized)

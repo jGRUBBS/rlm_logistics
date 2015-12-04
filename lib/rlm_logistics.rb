@@ -1,8 +1,11 @@
 require 'virtus'
 require 'active_support/core_ext/hash/conversions'
+require 'active_support/core_ext/string/inflections'
 
 require 'rlm_logistics/client'
 require 'rlm_logistics/record/base'
+require 'rlm_logistics/record/address'
+require 'rlm_logistics/record/line'
 require 'rlm_logistics/record/credit'
 require 'rlm_logistics/record/inventory'
 require 'rlm_logistics/record/item'

@@ -3,11 +3,11 @@ module RlmLogistics
     class Line < Base
 
       attribute :sku_number
+      attribute :style
       attribute :color
       attribute :size
       attribute :price
       attribute :quantity
-      attribute :style
       attribute :line_tax_amount
       attribute :line_state_tax_amount
       attribute :line_country_tax_amount
