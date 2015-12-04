@@ -1,0 +1,10 @@
+require 'virtus'
+require 'active_support/core_ext/hash/conversions'
+
+require 'rlm_logistics/client'
+require 'rlm_logistics/record/base'
+require 'rlm_logistics/record/credit'
+require 'rlm_logistics/record/inventory'
+require 'rlm_logistics/record/item'
+require 'rlm_logistics/record/packed_order'
+require 'rlm_logistics/record/sales_order'
