@@ -19,4 +19,19 @@ describe RlmLogistics::Record::Credit do
 
   end
 
+  describe '#valid?' do
+
+    let(:credit) { RlmLogistics::Record::Credit.new }
+
+    it 'returns false when company_number is not present' do
+      expect(credit.valid?).to eq(false)
+    end
+
+    it 'returns true when company_number is present' do
+      credit.company_number = 10
+      expect(credit.valid?).to eq(true)
+    end
+
+  end
+
 end

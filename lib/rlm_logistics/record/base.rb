@@ -15,6 +15,9 @@ module RlmLogistics
       extend  RlmLogistics::Helpers::AuthenticationHelper
       include RlmLogistics::Helpers::SerializationHelper
 
+      def save
+      end
+
     end
   end
 end

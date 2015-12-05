@@ -11,11 +11,11 @@ module RlmLogistics
       end
 
       def serializable_hash
-        attribute_hash = {}
-        attribute_set.each do |attribute|
-          serialize_attribute(attribute_hash, attribute)
+        Hash.new.tap do |attribute_hash|
+          attribute_set.each do |attribute|
+            serialize_attribute(attribute_hash, attribute)
+          end
         end
-        attribute_hash
       end
 
       def serialize_attribute(attribute_hash, attribute)
