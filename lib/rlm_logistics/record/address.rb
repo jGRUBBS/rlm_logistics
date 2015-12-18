@@ -11,7 +11,7 @@ module RlmLogistics
       attribute :country_code
       attribute :address_type
 
-      validates_presence :name, :address1, :city, :state, :zip, :address_type
+      validates_presence_of :name, :address1, :city, :state, :zip, :address_type
 
     end
   end

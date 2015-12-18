@@ -35,8 +35,8 @@ module RlmLogistics
       has_many :addresses
       has_many :details, collection: :line
 
-      validates_presence :company_number, :currency, :order_date, :start_date,
-                         :cancel_date, :addresses, :details
+      validates_presence_of :company_number, :currency, :order_date, :start_date,
+                            :cancel_date, :addresses, :details
 
     end
   end

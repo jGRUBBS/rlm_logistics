@@ -15,7 +15,7 @@ module RlmLogistics
       attribute :line_other_tax_amount
       attribute :line_tax_percent
 
-      validates_presence :sku_number, :color, :size, :price, :quantity
+      validates_presence_of :sku_number, :color, :size, :price, :quantity
 
     end
   end

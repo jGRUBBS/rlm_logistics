@@ -22,7 +22,7 @@ module RlmLogistics
       attribute :ats_includes_openorders
       attribute :limit_rows
 
-      validates_presence :company_number
+      validates_presence_of :company_number
 
     end
   end

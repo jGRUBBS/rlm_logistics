@@ -23,11 +23,20 @@ describe RlmLogistics::Record::Line do
 
   describe '#full_error_messages' do
 
-    let(:line) { RlmLogistics::Record::Line.new }
-    let(:msg)  { "sku_number, color, size, price, quantity can't be blank" }
+    let(:line)     { RlmLogistics::Record::Line.new }
+    let(:messages) do
+      [
+        "Sku number can't be blank",
+        "Color can't be blank",
+        "Size can't be blank",
+        "Price can't be blank",
+        "Quantity can't be blank"
+      ]
+    end
 
     it 'returns full error messages' do
-      expect(line.full_error_messages).to eq(msg)
+      line.valid?
+      expect(line.errors.full_messages).to eq(messages)
     end
 
   end

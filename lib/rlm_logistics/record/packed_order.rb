@@ -15,7 +15,7 @@ module RlmLogistics
       attribute :date_from
       attribute :date_to
 
-      validates_presence :company_number
+      validates_presence_of :company_number
 
     end
   end
