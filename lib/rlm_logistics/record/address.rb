@@ -1,6 +1,6 @@
 module RlmLogistics
   module Record
-    class Address < Base
+    class Address < ActiveRecord::Remote::Base
 
       attribute :name
       attribute :address1

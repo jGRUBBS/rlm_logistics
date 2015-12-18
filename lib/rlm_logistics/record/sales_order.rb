@@ -1,6 +1,6 @@
 module RlmLogistics
   module Record
-    class SalesOrder < Base
+    class SalesOrder < ActiveRecord::Remote::Base
 
       action    :sale_order_no_account
       operation :create

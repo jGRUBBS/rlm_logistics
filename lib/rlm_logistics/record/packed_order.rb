@@ -1,6 +1,6 @@
 module RlmLogistics
   module Record
-    class PackedOrder < Base
+    class PackedOrder < ActiveRecord::Remote::Base
 
       action    :packed_orders
       operation :get_selected
