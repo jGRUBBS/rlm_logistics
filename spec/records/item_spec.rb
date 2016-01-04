@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe RlmLogistics::Record::Item do
 
-  describe '#to_xml' do
+  describe '#as_xml' do
 
     let(:item) do
       RlmLogistics::Record::Item.new(
@@ -19,7 +19,7 @@ describe RlmLogistics::Record::Item do
     let(:item_xml) { xml_fixture(:item_request) }
 
     it 'returns a item object in xml format' do
-      expect(item.to_xml).to eq(item_xml)
+      expect(item.as_xml).to eq(item_xml)
     end
 
   end

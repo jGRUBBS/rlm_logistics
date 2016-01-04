@@ -1,6 +1,6 @@
 module RlmLogistics
   module Record
-    class Inventory < ActiveRecord::Remote::Base
+    class Inventory < Base
 
       action    :item
       operation :get_inventory

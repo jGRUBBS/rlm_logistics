@@ -1,6 +1,6 @@
 require 'active_record/remote'
-
 require 'rlm_logistics/client'
+require 'rlm_logistics/record/base'
 require 'rlm_logistics/record/address'
 require 'rlm_logistics/record/credit'
 require 'rlm_logistics/record/inventory'

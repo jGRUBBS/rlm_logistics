@@ -1,6 +1,6 @@
 module RlmLogistics
   module Record
-    class Line < ActiveRecord::Remote::Base
+    class Line < Base
 
       attribute :sku_number
       attribute :style

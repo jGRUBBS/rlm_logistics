@@ -1,6 +1,6 @@
 module RlmLogistics
   module Record
-    class Item < ActiveRecord::Remote::Base
+    class Item < Base
 
       action    :item
       operation :get_selected

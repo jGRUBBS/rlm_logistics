@@ -1,6 +1,6 @@
 module RlmLogistics
   module Record
-    class Credit < ActiveRecord::Remote::Base
+    class Credit < Base
 
       action    :billing
       operation :get_credits
