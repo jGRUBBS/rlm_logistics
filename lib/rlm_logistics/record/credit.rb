@@ -12,6 +12,8 @@ module RlmLogistics
       attribute :date_from
       attribute :date_to
 
+      # custom rma field :customer_po ???
+
       validates_presence_of :company_number
 
     end
