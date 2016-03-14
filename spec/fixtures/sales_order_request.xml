@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ITEM_FILTER>
-  <AUTHENTICATION>
-    <USERNAME>XXUSER</USERNAME>
-    <KEY_VALUE>XXKEY</KEY_VALUE>
-  </AUTHENTICATION>
-  <COMPANY_NUMBER>10</COMPANY_NUMBER>
-  <DIVISION_NUMBER>50</DIVISION_NUMBER>
-  <EMAIL>customer@gmail.com</EMAIL>
-  <CURRENCY>$</CURRENCY>
-  <ORDER_DATE>20120115</ORDER_DATE>
-  <START_DATE>20120115</START_DATE>
-  <CANCEL_DATE>20120115</CANCEL_DATE>
-  <CUSTOMER_PO>YOURPO#</CUSTOMER_PO>
-  <SPECIAL01>101</SPECIAL01>
-  <SPECIAL02>102</SPECIAL02>
-  <SPECIAL03>103</SPECIAL03>
-  <SPECIAL04>104</SPECIAL04>
-  <DISCOUNT>0.05</DISCOUNT>
-  <ADDRESSES>
-    <ADDRESS>
-      <NAME>My Name</NAME>
-      <ADDRESS1>ad1</ADDRESS1>
-      <ADDRESS2>ad2</ADDRESS2>
-      <CITY>My city</CITY>
-      <STATE>My state</STATE>
-      <ZIP>My zip</ZIP>
-      <COUNTRY_CODE>USA</COUNTRY_CODE>
-      <ADDRESS_TYPE>S</ADDRESS_TYPE>
-    </ADDRESS>
-    <ADDRESS>
-      <NAME>My Name</NAME>
-      <ADDRESS1>ad10</ADDRESS1>
-      <CITY>My city</CITY>
-      <STATE>My state</STATE>
-      <ZIP>My zip</ZIP>
-      <ADDRESS_TYPE>B</ADDRESS_TYPE>
-    </ADDRESS>
-  </ADDRESSES>
-  <DETAILS>
-    <LINE>
-      <SKU_NUMBER>100566</SKU_NUMBER>
-      <STYLE>AE234033</STYLE>
-      <COLOR>12MCL</COLOR>
-      <SIZE>34</SIZE>
-      <PRICE>10.99</PRICE>
-      <QUANTITY>12</QUANTITY>
-    </LINE>
-  </DETAILS>
-</ITEM_FILTER>
+<order>
+  <authentication>
+    <username>XXUSER</username>
+    <key_value>XXKEY</key_value>
+  </authentication>
+  <company>10</company>
+  <division>50</division>
+  <email>customer@gmail.com</email>
+  <currency>$</currency>
+  <orderDate>20120115</orderDate>
+  <startDate>20120115</startDate>
+  <cancelDate>20120115</cancelDate>
+  <customerPO>YOURPO#</customerPO>
+  <special01>101</special01>
+  <special02>102</special02>
+  <special03>103</special03>
+  <special04>104</special04>
+  <discount>0.05</discount>
+  <addresses>
+    <address>
+      <name>My Name</name>
+      <address1>ad1</address1>
+      <address2>ad2</address2>
+      <city>My city</city>
+      <state>My state</state>
+      <zip>My zip</zip>
+      <country_code>USA</country_code>
+      <address_type>S</address_type>
+    </address>
+    <address>
+      <name>My Name</name>
+      <address1>ad10</address1>
+      <city>My city</city>
+      <state>My state</state>
+      <zip>My zip</zip>
+      <address_type>B</address_type>
+    </address>
+  </addresses>
+  <details>
+    <line>
+      <SKUNumber>100566</SKUNumber>
+      <style>AE234033</style>
+      <color>12MCL</color>
+      <size>34</size>
+      <price>10.99</price>
+      <quantity>12</quantity>
+    </line>
+  </details>
+</order>
