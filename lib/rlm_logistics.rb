@@ -1,10 +1,26 @@
+require 'active_support'
 require 'active_record/remote'
 require 'rlm_logistics/client'
-require 'rlm_logistics/record/base'
-require 'rlm_logistics/record/address'
-require 'rlm_logistics/record/credit'
-require 'rlm_logistics/record/inventory'
-require 'rlm_logistics/record/item'
-require 'rlm_logistics/record/line'
-require 'rlm_logistics/record/packed_order'
-require 'rlm_logistics/record/sales_order'
+
+module RlmLogistics
+
+  module Record
+    autoload :Base,        'rlm_logistics/record/base'
+    autoload :Address,     'rlm_logistics/record/address'
+    autoload :Credit,      'rlm_logistics/record/credit'
+    autoload :Inventory,   'rlm_logistics/record/inventory'
+    autoload :Item,        'rlm_logistics/record/item'
+    autoload :Line,        'rlm_logistics/record/line'
+    autoload :PackedOrder, 'rlm_logistics/record/packed_order'
+    autoload :SalesOrder,  'rlm_logistics/record/sales_order'
+  end
+
+  mattr_accessor :username, :password, :endpoint_path
+
+  extend self
+
+  def config
+    yield self
+  end
+
+end

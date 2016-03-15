@@ -1,50 +1,57 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<order>
-  <authentication>
-    <username>XXUSER</username>
-    <key_value>XXKEY</key_value>
-  </authentication>
-  <company>10</company>
-  <division>50</division>
-  <email>customer@gmail.com</email>
-  <currency>$</currency>
-  <orderDate>20120115</orderDate>
-  <startDate>20120115</startDate>
-  <cancelDate>20120115</cancelDate>
-  <customerPO>YOURPO#</customerPO>
-  <special01>101</special01>
-  <special02>102</special02>
-  <special03>103</special03>
-  <special04>104</special04>
-  <discount>0.05</discount>
-  <addresses>
-    <address>
-      <name>My Name</name>
-      <address1>ad1</address1>
-      <address2>ad2</address2>
-      <city>My city</city>
-      <state>My state</state>
-      <zip>My zip</zip>
-      <country_code>USA</country_code>
-      <address_type>S</address_type>
-    </address>
-    <address>
-      <name>My Name</name>
-      <address1>ad10</address1>
-      <city>My city</city>
-      <state>My state</state>
-      <zip>My zip</zip>
-      <address_type>B</address_type>
-    </address>
-  </addresses>
-  <details>
-    <line>
-      <SKUNumber>100566</SKUNumber>
-      <style>AE234033</style>
-      <color>12MCL</color>
-      <size>34</size>
-      <price>10.99</price>
-      <quantity>12</quantity>
-    </line>
-  </details>
-</order>
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Body>
+    <create xmlns="http://ws.rlm.com">
+      <filterXML>
+&lt;order&gt;
+&lt;authentication&gt;
+&lt;username&gt;XXUSER&lt;/username&gt;
+&lt;key_value&gt;XXKEY&lt;/key_value&gt;
+&lt;/authentication&gt;
+&lt;company&gt;10&lt;/company&gt;
+&lt;division&gt;50&lt;/division&gt;
+&lt;email&gt;customer@gmail.com&lt;/email&gt;
+&lt;currency&gt;$&lt;/currency&gt;
+&lt;orderDate&gt;20120115&lt;/orderDate&gt;
+&lt;startDate&gt;20120115&lt;/startDate&gt;
+&lt;cancelDate&gt;20120115&lt;/cancelDate&gt;
+&lt;customerPO&gt;YOURPO#&lt;/customerPO&gt;
+&lt;special01&gt;101&lt;/special01&gt;
+&lt;special02&gt;102&lt;/special02&gt;
+&lt;special03&gt;103&lt;/special03&gt;
+&lt;special04&gt;104&lt;/special04&gt;
+&lt;discount&gt;0.05&lt;/discount&gt;
+&lt;addresses&gt;
+&lt;address&gt;
+&lt;name&gt;MyName&lt;/name&gt;
+&lt;address1&gt;ad1&lt;/address1&gt;
+&lt;address2&gt;ad2&lt;/address2&gt;
+&lt;city&gt;Mycity&lt;/city&gt;
+&lt;state&gt;Mystate&lt;/state&gt;
+&lt;zip&gt;Myzip&lt;/zip&gt;
+&lt;country_code&gt;USA&lt;/country_code&gt;
+&lt;address_type&gt;S&lt;/address_type&gt;
+&lt;/address&gt;
+&lt;address&gt;
+&lt;name&gt;MyName&lt;/name&gt;
+&lt;address1&gt;ad10&lt;/address1&gt;
+&lt;city&gt;Mycity&lt;/city&gt;
+&lt;state&gt;Mystate&lt;/state&gt;
+&lt;zip&gt;Myzip&lt;/zip&gt;
+&lt;address_type&gt;B&lt;/address_type&gt;
+&lt;/address&gt;
+&lt;/addresses&gt;
+&lt;details&gt;
+&lt;line&gt;
+&lt;SKUNumber&gt;100566&lt;/SKUNumber&gt;
+&lt;style&gt;AE234033&lt;/style&gt;
+&lt;color&gt;12MCL&lt;/color&gt;
+&lt;size&gt;34&lt;/size&gt;
+&lt;price&gt;10.99&lt;/price&gt;
+&lt;quantity&gt;12&lt;/quantity&gt;
+&lt;/line&gt;
+&lt;/details&gt;
+&lt;/order&gt;
+</filterXML>
+    </create>
+  </Body>
+</Envelope>

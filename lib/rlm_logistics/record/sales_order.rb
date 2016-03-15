@@ -2,8 +2,8 @@ module RlmLogistics
   module Record
     class SalesOrder < Base
 
-      action    :sale_order_no_account
-      operation :create
+      action    "SaleOrderNoAccount"
+      operation "create"
 
       authenticate strict: true
 
@@ -38,7 +38,7 @@ module RlmLogistics
       validates_presence_of :company_number, :currency, :order_date, :start_date,
                             :cancel_date, :addresses, :details
 
-      def xml_options
+      def soap_options
         super.merge(root: "order")
       end
 

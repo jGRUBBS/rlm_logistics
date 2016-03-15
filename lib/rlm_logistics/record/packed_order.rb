@@ -2,8 +2,8 @@ module RlmLogistics
   module Record
     class PackedOrder < Base
 
-      action    :packed_orders
-      operation :get_selected
+      action    "PackedOrders"
+      operation "getSelected"
 
       authenticate
 

@@ -2,8 +2,8 @@ module RlmLogistics
   module Record
     class Inventory < Base
 
-      action    :item
-      operation :get_inventory
+      action    "Item"
+      operation "getInventory"
 
       authenticate
 

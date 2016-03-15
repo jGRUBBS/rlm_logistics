@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe RlmLogistics::Record::Credit do
 
-  describe '#as_xml' do
+  describe '#as_soap' do
 
     let(:credit) do
       RlmLogistics::Record::Credit.new(
-        company_number: 10,
+        company_number: 90,
         date_from:      20130131,
         date_to:        20130601
       )
@@ -14,7 +14,7 @@ describe RlmLogistics::Record::Credit do
     let(:credit_xml) { xml_fixture(:credit_request) }
 
     it 'returns a credit object in xml format' do
-      expect(credit.as_xml).to eq(credit_xml)
+      expect(credit.as_soap).to eq(credit_xml)
     end
 
   end

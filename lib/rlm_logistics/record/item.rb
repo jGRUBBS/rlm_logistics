@@ -2,8 +2,8 @@ module RlmLogistics
   module Record
     class Item < Base
 
-      action    :item
-      operation :get_selected
+      action    "Item"
+      operation "getSelected"
 
       authenticate
 

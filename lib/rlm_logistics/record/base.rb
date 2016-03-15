@@ -6,18 +6,25 @@ module RlmLogistics
 
       extend RlmLogistics::Helpers::AuthenticationHelper
 
-      def as_xml
-        serializable_hash.to_xml(xml_options)
+      api_type :soap
+
+      def custom_options
+        { authentication: credentials }
       end
 
-      def xml_options
+      def credentials
         {
-          root:       "ITEM_FILTER",
-          dasherize:  false,
-          skip_types: true,
-          upcase:     true,
-          omit_nils:  true
+          username:  RlmLogistics.username,
+          key_value: RlmLogistics.password
         }
+      end
+
+      def soap_options
+        super.merge(
+          root:       "ITEM_FILTER",
+          namespace:  "http://ws.rlm.com",
+          operation:  self.class.operation_path
+        )
       end
 
     end

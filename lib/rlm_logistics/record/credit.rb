@@ -2,8 +2,8 @@ module RlmLogistics
   module Record
     class Credit < Base
 
-      action    :billing
-      operation :get_credits
+      action    "Billing"
+      operation "getCredits"
 
       authenticate
 
@@ -11,8 +11,6 @@ module RlmLogistics
       attribute :division_number
       attribute :date_from
       attribute :date_to
-
-      # custom rma field :customer_po ???
 
       validates_presence_of :company_number
 

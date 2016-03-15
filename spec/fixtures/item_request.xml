@@ -1,15 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ITEM_FILTER>
-  <AUTHENTICATION>
-    <USERNAME>XXUSER</USERNAME>
-    <KEY_VALUE>XXKEY</KEY_VALUE>
-  </AUTHENTICATION>
-  <COMPANY_NUMBER>1</COMPANY_NUMBER>
-  <DIVISION_NUMBER>10</DIVISION_NUMBER>
-  <SEASON_CODE>R</SEASON_CODE>
-  <SEASON_YEAR>11</SEASON_YEAR>
-  <STYLE_NUMBER>1R11007</STYLE_NUMBER>
-  <WEB_READY_ONLY>Y</WEB_READY_ONLY>
-  <RETRIEVE_UPCS>N</RETRIEVE_UPCS>
-  <LIMIT_ROWS>50</LIMIT_ROWS>
-</ITEM_FILTER>
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Body>
+    <getSelected xmlns="http://ws.rlm.com">
+      <filterXML>
+&lt;ITEM_FILTER&gt;
+&lt;AUTHENTICATION&gt;
+&lt;USERNAME&gt;XXUSER&lt;/USERNAME&gt;
+&lt;KEY_VALUE&gt;XXKEY&lt;/KEY_VALUE&gt;
+&lt;/AUTHENTICATION&gt;
+&lt;COMPANY_NUMBER&gt;1&lt;/COMPANY_NUMBER&gt;
+&lt;DIVISION_NUMBER&gt;10&lt;/DIVISION_NUMBER&gt;
+&lt;SEASON_CODE&gt;R&lt;/SEASON_CODE&gt;
+&lt;SEASON_YEAR&gt;11&lt;/SEASON_YEAR&gt;
+&lt;STYLE_NUMBER&gt;1R11007&lt;/STYLE_NUMBER&gt;
+&lt;WEB_READY_ONLY&gt;Y&lt;/WEB_READY_ONLY&gt;
+&lt;RETRIEVE_UPCS&gt;N&lt;/RETRIEVE_UPCS&gt;
+&lt;LIMIT_ROWS&gt;50&lt;/LIMIT_ROWS&gt;
+&lt;/ITEM_FILTER&gt;
+</filterXML>
+    </getSelected>
+  </Body>
+</Envelope>

@@ -8,3 +8,15 @@ end
 def fixture_path(type)
   File.expand_path("spec/fixtures/#{type}.xml")
 end
+
+RSpec.configure do |config|
+  config.before(:each) do
+
+    RlmLogistics.config do |r|
+      r.username      = "XXUSER"
+      r.password      = "XXKEY"
+      r.endpoint_path = "TESTServices"
+    end
+
+  end
+end

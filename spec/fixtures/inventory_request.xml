@@ -1,12 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ITEM_FILTER>
-  <AUTHENTICATION>
-    <USERNAME>XXUSER</USERNAME>
-    <KEY_VALUE>XXKEY</KEY_VALUE>
-  </AUTHENTICATION>
-  <COMPANY_NUMBER>1</COMPANY_NUMBER>
-  <DIVISION_NUMBER>10</DIVISION_NUMBER>
-  <SEASON_CODE>R</SEASON_CODE>
-  <SEASON_YEAR>11</SEASON_YEAR>
-  <STYLE_NUMBER>1R11007</STYLE_NUMBER>
-</ITEM_FILTER>
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Body>
+    <getInventory xmlns="http://ws.rlm.com">
+      <filterXML>
+&lt;ITEM_FILTER&gt;
+&lt;AUTHENTICATION&gt;
+&lt;USERNAME&gt;XXUSER&lt;/USERNAME&gt;
+&lt;KEY_VALUE&gt;XXKEY&lt;/KEY_VALUE&gt;
+&lt;/AUTHENTICATION&gt;
+&lt;COMPANY_NUMBER&gt;90&lt;/COMPANY_NUMBER&gt;
+&lt;/ITEM_FILTER&gt;
+</filterXML>
+    </getInventory>
+  </Body>
+</Envelope>

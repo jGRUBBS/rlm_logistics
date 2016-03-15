@@ -2,9 +2,6 @@
 
 ### Notes
 
-- what is up with the inconsistency of the data format for sales_order?
-  - fields are not all caps and some are underscored while others are camel-cased
-
 - for sales order why are the following fields all required?
   - :order_date
   - :start_date
@@ -18,16 +15,12 @@
 
 ### Usage
 
-```
-# instantiate client
-client = RlmLogistics::Client.new(username: "testuser", key: "123testkey")
+`config/inializer/rlm.rb`
 
-# get inventory
-client.Inventory.all
-
-# instantiate a new order object
-order = client.Order.new
-
-# save object sends API request if valid, otherwise returns errors
-order.save
+```ruby
+RlmLogistics.config do |r|
+  r.username      = "XXUSER"
+  r.password      = "XXKEY"
+  r.endpoint_path = "TESTServices"
+end
 ```

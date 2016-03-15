@@ -10,10 +10,9 @@ module RlmLogistics
       private
 
       def authentication_hash
-        # FIXME: needs to pull from client
         {
-          username:  "XXUSER",
-          key_value: "XXKEY"
+          username:  "",
+          key_value: ""
         }
       end
 
