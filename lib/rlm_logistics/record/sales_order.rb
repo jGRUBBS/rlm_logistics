@@ -2,8 +2,9 @@ module RlmLogistics
   module Record
     class SalesOrder < Base
 
-      action    "SaleOrderNoAccount"
-      operation "create"
+      action       "SalesOrderNoAccount"
+      operation    "create"
+      base_element "orderXML"
 
       authenticate strict: true
 

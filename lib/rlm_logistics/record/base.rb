@@ -8,6 +8,8 @@ module RlmLogistics
 
       api_type :soap
 
+      base_element "filterXML"
+
       def custom_options
         { authentication: credentials }
       end
@@ -21,9 +23,10 @@ module RlmLogistics
 
       def soap_options
         super.merge(
-          root:       "ITEM_FILTER",
-          namespace:  "http://ws.rlm.com",
-          operation:  self.class.operation_path
+          root:         "ITEM_FILTER",
+          namespace:    "http://ws.rlm.com",
+          operation:    self.class.operation_path,
+          base_element: self.class.base_element_name
         )
       end
 

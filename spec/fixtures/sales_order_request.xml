@@ -1,7 +1,7 @@
 <Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
   <Body>
     <create xmlns="http://ws.rlm.com">
-      <filterXML>
+      <orderXML>
 &lt;order&gt;
 &lt;authentication&gt;
 &lt;username&gt;XXUSER&lt;/username&gt;
@@ -51,7 +51,7 @@
 &lt;/line&gt;
 &lt;/details&gt;
 &lt;/order&gt;
-</filterXML>
+</orderXML>
     </create>
   </Body>
 </Envelope>
