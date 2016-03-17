@@ -37,6 +37,7 @@ module RlmLogistics
       string.gsub!("&gt;", ">")
       string.gsub!("\\", "")
       string.gsub!("&quot;", '"')
+      string
     end
 
     def response_code
