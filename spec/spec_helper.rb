@@ -16,7 +16,7 @@ RSpec.configure do |config|
     RlmLogistics.config do |r|
       r.username      = "XXUSER"
       r.password      = "XXKEY"
-      r.endpoint_path = "CLOVServices"
+      r.endpoint_path = "TESTServices"
     end
 
   end

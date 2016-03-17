@@ -8,6 +8,7 @@ module RlmLogistics
 
       authenticate strict: true
 
+      attribute :id
       attribute :company_number,  Integer, as: :company
       attribute :division_number, Integer, as: :division
       attribute :single_division, String,  as: :singleDivision
@@ -41,6 +42,10 @@ module RlmLogistics
 
       def soap_options
         super.merge(root: "order")
+      end
+
+      def parse(response)
+        self.id = response.data.to_i
       end
 
     end

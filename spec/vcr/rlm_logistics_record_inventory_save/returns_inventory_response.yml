@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://www.ronlynn.com/CLOVServices/services/Item
+    uri: http://www.ronlynn.com/TESTServices/services/Item
     body:
       encoding: UTF-8
       string: |

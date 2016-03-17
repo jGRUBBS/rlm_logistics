@@ -39,7 +39,6 @@ describe RlmLogistics::Record::Inventory do
 
       it 'returns error response' do
         # this VCR casset was recorded with invalid credentials
-        expect(inventory.errors.size).to eq(1)
         expect(inventory.errors.full_messages).to eq(error_messages)
         expect(inventory.valid?).to eq(false)
       end

@@ -19,7 +19,13 @@ module RlmLogistics
     end
 
     def data
-      parsed_response["RESPONSE"]["DATA"]["RECSET"]["REC"]
+      if record_instance.class.to_s.match(/inventory/i)
+        parsed_response["RESPONSE"]["DATA"]["RECSET"]["REC"]
+      elsif record_instance.class.to_s.match(/salesorder/i)
+        parsed_response["RESPONSE"]["ORDER_NUMBER"]
+      else
+        parsed_response
+      end
     end
 
     def valid?
