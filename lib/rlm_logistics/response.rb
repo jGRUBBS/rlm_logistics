@@ -7,14 +7,19 @@ module RlmLogistics
       soap_body        = hash["Envelope"]["Body"]
       @parsed_response = soap_body["#{operation}Response"]["#{operation}Return"]
       if valid?
-        # save response in meaningful way
+        record_instance.parse(self)
       else
         record_instance.errors.add(:base, response_message)
       end
+      self
     end
 
     def response_message
       parsed_response["RESPONSE"]["DESCRIPTION"]
+    end
+
+    def data
+      parsed_response["RESPONSE"]["DATA"]["RECSET"]["REC"]
     end
 
     def valid?
@@ -29,6 +34,9 @@ module RlmLogistics
     private
 
     def remove_junk(string)
+      # Here we cleanup the response from RLM since their responses can be
+      # quite large for inventory requests. As well we convert their escaped
+      # xml string into valid xml so it can be parsed once
       string.gsub!("\n", "")
       string.gsub!("&lt;?xml version=&quot;1.0&quot; ", "")
       string.gsub!("encoding=&quot;UTF-8&quot; ?&gt;", "")
@@ -42,10 +50,6 @@ module RlmLogistics
 
     def response_code
       parsed_response["RESPONSE"]["CODE"]
-    end
-
-    def response_data
-      parsed_response["RESPONSE"]["DATA"]["RECSET"]["REC"]
     end
 
   end

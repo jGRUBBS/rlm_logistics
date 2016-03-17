@@ -25,6 +25,19 @@ module RlmLogistics
 
       validates_presence_of :company_number
 
+      def parse(response)
+        @raw_data    = response.data
+        @parsed_data = convert_raw_data
+      end
+
+      def convert_raw_data
+        raw_data.flat_map do |item|
+          upcs = item["UPCS"].split(",")
+          qtys = item["ATS"].split(",").map(&:to_i)
+          upcs.map.with_index { |upc, idx| { upc: upc, quantity: qtys[idx] } }
+        end
+      end
+
     end
   end
 end

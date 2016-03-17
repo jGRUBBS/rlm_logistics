@@ -43,9 +43,33 @@ describe RlmLogistics::Record::Inventory do
 
     end
 
+    let(:expected_result) do
+      [
+        { upc: "CB11D10-BLUE-S",     quantity: 112 },
+        { upc: "CB11D10-BLUE-M",     quantity: 113 },
+        { upc: "CB11D10-BLUE-L",     quantity: 113 },
+        { upc: "CB11E21-BLUE-S",     quantity: 106 },
+        { upc: "CB11E21-BLUE-M",     quantity: 106 },
+        { upc: "CB11E21-BLUE-L",     quantity: 103 },
+        { upc: "CB11E21-CORAL-S",    quantity: 84  },
+        { upc: "CB11E21-CORAL-M",    quantity: 85  },
+        { upc: "CB11E21-CORAL-L",    quantity: 85  },
+        { upc: "AAAAAAAAA-CORAL-XS", quantity: 1   },
+        { upc: "CCTESTS-BLUE-XS",    quantity: 93  },
+        { upc: "CCTESTS-BLUE-S",     quantity: 93  },
+        { upc: "CCTESTS-BLUE-M",     quantity: 95  },
+        { upc: "CCTESTS-BLUE-L",     quantity: 96  },
+        { upc: "CCTESTS-CORAL-XS",   quantity: 1   },
+        { upc: "CCTESTS-CORAL-S",    quantity: 1   },
+        { upc: "CCTESTS-CORAL-M",    quantity: 1   },
+        { upc: "CCTESTS-CORAL-L",    quantity: 1   }
+      ]
+    end
+
     it 'returns inventory response' do
       # this VCR casset was recorded with valid credentials
       expect(inventory.valid?).to eq(true)
+      expect(inventory.parsed_data).to eq(expected_result)
     end
 
   end
