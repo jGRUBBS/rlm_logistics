@@ -1,5 +1,6 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'rlm_logistics'
+require 'support/vcr_support'
 
 def xml_fixture(type)
   File.read( fixture_path(type) )
@@ -15,7 +16,7 @@ RSpec.configure do |config|
     RlmLogistics.config do |r|
       r.username      = "XXUSER"
       r.password      = "XXKEY"
-      r.endpoint_path = "TESTServices"
+      r.endpoint_path = "CLOVServices"
     end
 
   end

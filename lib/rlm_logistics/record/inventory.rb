@@ -21,6 +21,7 @@ module RlmLogistics
       attribute :ats_includes_wip
       attribute :ats_includes_openorders
       attribute :limit_rows
+      attribute :upcs
 
       validates_presence_of :company_number
 

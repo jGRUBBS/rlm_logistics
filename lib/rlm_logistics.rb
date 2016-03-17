@@ -1,6 +1,7 @@
 require 'active_support'
 require 'active_record/remote'
 require 'rlm_logistics/client'
+require 'rlm_logistics/response'
 
 module RlmLogistics
 
