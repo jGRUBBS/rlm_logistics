@@ -21,6 +21,10 @@ module RlmLogistics
 
       validates_presence_of :company_number
 
+      def parse(response)
+        @raw_data = response.data
+      end
+
     end
   end
 end
