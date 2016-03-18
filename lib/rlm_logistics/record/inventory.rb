@@ -22,6 +22,8 @@ module RlmLogistics
       attribute :ats_includes_openorders
       attribute :limit_rows
       attribute :upcs
+      attribute :minimal_results
+      attribute :required_data_only
 
       validates_presence_of :company_number
 
@@ -32,9 +34,21 @@ module RlmLogistics
 
       def convert_raw_data
         raw_data.flat_map do |item|
-          upcs = item["UPCS"].split(",")
-          qtys = item["ATS"].split(",").map(&:to_i)
-          upcs.map.with_index { |upc, idx| { upc: upc, quantity: qtys[idx] } }
+          upcs  = item["UPCS"].split(",")
+          qtys  = item["ATS"].split(",").map(&:to_i) if item["ATS"]
+          sizes = item["SIZES"].split(",")           if item["SIZES"]
+          sku   = item["INTERNAL_SKU_NUMBER"].to_i   if item["INTERNAL_SKU_NUMBER"]
+          color = item["COLOR"]
+          style = item["STYLE_NUMBER"]
+          upcs.map.with_index do |upc, idx|
+            hash = { upc: upc }
+            hash.merge!(quantity: qtys[idx]) if qtys
+            hash.merge!(size: sizes[idx])    if sizes
+            hash.merge!(color: color)        if color
+            hash.merge!(style: style)        if style
+            hash.merge!(sku: sku)            if sku
+            hash
+          end
         end
       end
 

@@ -46,7 +46,19 @@ module RlmLogistics
       string.gsub!("\n", "")
       string.gsub!("&lt;?xml version=&quot;1.0&quot; ", "")
       string.gsub!("encoding=&quot;UTF-8&quot; ?&gt;", "")
-      string.gsub!(/\&lt\;COMPANY(.*?)\/SIZES\&gt\;/i, '')
+      if record_instance.try(:minimal_results)
+        # cuts out the majority of fields in response
+        # down to only `UPCS` and `ATS`
+        string.gsub!(/\&lt\;COMPANY(.*?)\/SIZES\&gt\;/i, '')
+      end
+      if record_instance.try(:required_data_only)
+        # cuts out the majority of fields in response down to only
+        # `INTERNAL_SKU_NUMBER`, `STYLE_NUMBER`, `COLOR`, `SIZES`, `UPCS`
+        string.gsub!(/\&lt\;COMPANY(.*?)\/SEASON_YEAR\&gt\;/i, '')
+        string.gsub!(/\&lt\;FABRIC(.*?)\/LENGTH\&gt\;/i, '')
+        string.gsub!(/\&lt\;SKU_COLOR(.*?)\/ITEM_CROSS_REFERENCE\&gt\;/i, '')
+        string.gsub!(/\&lt\;ATS(.*?)\/ATS\&gt\;/i, '')
+      end
       string.gsub!("&lt;", "<")
       string.gsub!("&gt;", ">")
       string.gsub!("\\", "")

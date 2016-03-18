@@ -33,19 +33,18 @@ describe RlmLogistics::Record::Inventory do
 
     let(:error_messages) {["The user/key combination does not exist"]}
 
-    before { inventory.save }
-
     context 'bad user credentials' do
 
       it 'returns error response' do
         # this VCR casset was recorded with invalid credentials
+        inventory.save
         expect(inventory.errors.full_messages).to eq(error_messages)
         expect(inventory.valid?).to eq(false)
       end
 
     end
 
-    let(:expected_result) do
+    let(:expected_minimal_result) do
       [
         { upc: "CB11D10-BLUE-S",     quantity: 112 },
         { upc: "CB11D10-BLUE-M",     quantity: 113 },
@@ -68,10 +67,43 @@ describe RlmLogistics::Record::Inventory do
       ]
     end
 
-    it 'returns inventory response' do
+    let(:expected_required_data_result) do
+      [
+        { upc: "CB11D10-BLUE-S",     size: "S",  color: "BLUE",  style: "CB11D10",   sku: 4    },
+        { upc: "CB11D10-BLUE-M",     size: "M",  color: "BLUE",  style: "CB11D10",   sku: 4    },
+        { upc: "CB11D10-BLUE-L",     size: "L",  color: "BLUE",  style: "CB11D10",   sku: 4    },
+        { upc: "CB11E21-BLUE-S",     size: "S",  color: "BLUE",  style: "CB11E21",   sku: 9    },
+        { upc: "CB11E21-BLUE-M",     size: "M",  color: "BLUE",  style: "CB11E21",   sku: 9    },
+        { upc: "CB11E21-BLUE-L",     size: "L",  color: "BLUE",  style: "CB11E21",   sku: 9    },
+        { upc: "CB11E21-CORAL-S",    size: "S",  color: "CORAL", style: "CB11E21",   sku: 9    },
+        { upc: "CB11E21-CORAL-M",    size: "M",  color: "CORAL", style: "CB11E21",   sku: 9    },
+        { upc: "CB11E21-CORAL-L",    size: "L",  color: "CORAL", style: "CB11E21",   sku: 9    },
+        { upc: "AAAAAAAAA-CORAL-XS", size: "XS", color: "CORAL", style: "AAAAAAAAA", sku: 5509 },
+        { upc: "CCTESTS-BLUE-XS",    size: "XS", color: "BLUE",  style: "CCTESTS",   sku: 1827 },
+        { upc: "CCTESTS-BLUE-S",     size: "S",  color: "BLUE",  style: "CCTESTS",   sku: 1827 },
+        { upc: "CCTESTS-BLUE-M",     size: "M",  color: "BLUE",  style: "CCTESTS",   sku: 1827 },
+        { upc: "CCTESTS-BLUE-L",     size: "L",  color: "BLUE",  style: "CCTESTS",   sku: 1827 },
+        { upc: "CCTESTS-CORAL-XS",   size: "XS", color: "CORAL", style: "CCTESTS",   sku: 1827 },
+        { upc: "CCTESTS-CORAL-S",    size: "S",  color: "CORAL", style: "CCTESTS",   sku: 1827 },
+        { upc: "CCTESTS-CORAL-M",    size: "M",  color: "CORAL", style: "CCTESTS",   sku: 1827 },
+        { upc: "CCTESTS-CORAL-L",    size: "L",  color: "CORAL", style: "CCTESTS",   sku: 1827 }
+      ]
+    end
+
+    it 'returns inventory response with minimal results' do
       # this VCR casset was recorded with valid credentials
+      inventory.minimal_results = true
+      inventory.save
       expect(inventory.valid?).to eq(true)
-      expect(inventory.parsed_data).to eq(expected_result)
+      expect(inventory.parsed_data).to eq(expected_minimal_result)
+    end
+
+    it 'returns inventory response with required data' do
+      # this VCR casset was recorded with valid credentials
+      inventory.required_data_only = true
+      inventory.save
+      expect(inventory.valid?).to eq(true)
+      expect(inventory.parsed_data).to eq(expected_required_data_result)
     end
 
   end
