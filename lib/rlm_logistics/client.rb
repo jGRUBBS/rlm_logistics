@@ -1,6 +1,7 @@
 module RlmLogistics
   class Client <  ActiveRecord::Remote::Client
 
+    secure false
     content_type "text/xml; charset=utf-8"
     host "www.ronlynn.com"
     # RLM's API is particularly slow due to a large amount of data that is

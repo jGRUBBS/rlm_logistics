@@ -11,7 +11,7 @@ module RlmLogistics
       base_element "filterXML"
 
       def custom_options
-        { authentication: credentials }
+        { authentication: credentials, company_number: RlmLogistics.company }
       end
 
       def credentials

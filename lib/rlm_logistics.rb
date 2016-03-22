@@ -16,7 +16,7 @@ module RlmLogistics
     autoload :SalesOrder,  'rlm_logistics/record/sales_order'
   end
 
-  mattr_accessor :username, :password, :endpoint_path
+  mattr_accessor :username, :password, :endpoint_path, :company
 
   extend self
 
