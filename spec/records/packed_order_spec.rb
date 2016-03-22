@@ -4,9 +4,12 @@ describe RlmLogistics::Record::PackedOrder do
 
   describe '#as_soap' do
 
+    before do
+      RlmLogistics.company = 10
+    end
+
     let(:packed_order) do
       RlmLogistics::Record::PackedOrder.new(
-        company_number: 10,
         date_from:      20130131,
         date_to:        20130601
       )

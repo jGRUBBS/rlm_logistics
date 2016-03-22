@@ -23,6 +23,10 @@ describe RlmLogistics::Record::Inventory do
 
   describe '#valid?' do
 
+    before do
+      RlmLogistics.company = nil
+    end
+
     it 'returns false if required fields are not present' do
       expect(RlmLogistics::Record::Inventory.new.valid?).to eq(false)
     end

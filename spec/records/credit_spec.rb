@@ -21,6 +21,10 @@ describe RlmLogistics::Record::Credit do
 
   describe '#valid?' do
 
+    before do
+      RlmLogistics.company = nil
+    end
+
     let(:credit) { RlmLogistics::Record::Credit.new }
 
     it 'returns false when company_number is not present' do

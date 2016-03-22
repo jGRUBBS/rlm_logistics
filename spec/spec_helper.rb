@@ -17,6 +17,7 @@ RSpec.configure do |config|
       r.username      = "XXUSER"
       r.password      = "XXKEY"
       r.endpoint_path = "TESTServices"
+      r.company       = 90
     end
 
   end
