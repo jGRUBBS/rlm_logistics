@@ -151,8 +151,8 @@ packed_order = RlmLogistics::Record::PackedOrder.all
 Validation and errors are handled by ActiveModel so error handling looks like this:
 
 ```ruby
-inventory.errors.full_messages
+sales_order.errors.full_messages
 # => ["The user/key combination does not exist"]
-inventory.valid?
+sales_order.valid?
 # => false
 ```
