@@ -38,4 +38,40 @@ describe RlmLogistics::Record::Credit do
 
   end
 
+  let(:credits) { RlmLogistics::Record::Credit.where(company_number: 1) }
+
+  let(:expected_result) do
+    [
+      {
+        season_year:       "S14",
+        style:             "AAAAAAAAA TEST",
+        skunumber:         "5509",
+        style_description: "Test Style",
+        color:             "CORAL",
+        size:              "XS",
+        units:             "1",
+        unit_price:        "100.00"
+      }
+    ]
+  end
+
+  describe '#where', :vcr do
+
+    it 'returns credits collection' do
+      attrs = credits.collect(&:attributes).each do |attr|
+        attr.slice!(
+          :season_year, :style, :skunumber, :style_description, :color, :size,
+          :units, :unit_price
+        )
+      end
+      expect(attrs).to eq(expected_result)
+    end
+
+    it 'returns an empty array if no results are found' do
+      credits = RlmLogistics::Record::Credit.where(company_number: 90)
+      expect(credits).to eq([])
+    end
+
+  end
+
 end

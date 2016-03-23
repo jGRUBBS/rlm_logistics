@@ -2,15 +2,16 @@ require 'spec_helper'
 
 describe RlmLogistics::Record::Inventory do
 
-  let(:inventory) do
-    RlmLogistics::Record::Inventory.new(
+  let(:attrs) do
+    {
       company_number: 90,
       retrieve_upcs: 'Y',
       division_number: 10,
       ats_positive: 'Y',
       ats_includes_wip: 'N'
-    )
+    }
   end
+  let(:inventory)     { RlmLogistics::Record::Inventory.new(attrs) }
   let(:inventory_xml) { xml_fixture(:inventory_request) }
 
   describe '#as_soap' do
@@ -33,7 +34,7 @@ describe RlmLogistics::Record::Inventory do
 
   end
 
-  describe '#save', :vcr do
+  describe '#where', :vcr do
 
     let(:error_messages) {["The user/key combination does not exist"]}
 
@@ -48,66 +49,105 @@ describe RlmLogistics::Record::Inventory do
 
     end
 
-    let(:expected_minimal_result) do
+    let(:minimal_result) do
       [
-        { upc: "CB11D10-BLUE-S",     quantity: 112 },
-        { upc: "CB11D10-BLUE-M",     quantity: 113 },
-        { upc: "CB11D10-BLUE-L",     quantity: 113 },
-        { upc: "CB11E21-BLUE-S",     quantity: 106 },
-        { upc: "CB11E21-BLUE-M",     quantity: 106 },
-        { upc: "CB11E21-BLUE-L",     quantity: 103 },
-        { upc: "CB11E21-CORAL-S",    quantity: 84  },
-        { upc: "CB11E21-CORAL-M",    quantity: 85  },
-        { upc: "CB11E21-CORAL-L",    quantity: 85  },
-        { upc: "AAAAAAAAA-CORAL-XS", quantity: 1   },
-        { upc: "CCTESTS-BLUE-XS",    quantity: 93  },
-        { upc: "CCTESTS-BLUE-S",     quantity: 93  },
-        { upc: "CCTESTS-BLUE-M",     quantity: 95  },
-        { upc: "CCTESTS-BLUE-L",     quantity: 96  },
-        { upc: "CCTESTS-CORAL-XS",   quantity: 1   },
-        { upc: "CCTESTS-CORAL-S",    quantity: 1   },
-        { upc: "CCTESTS-CORAL-M",    quantity: 1   },
-        { upc: "CCTESTS-CORAL-L",    quantity: 1   }
+        {
+          upcs: "CB11D10-BLUE-S,CB11D10-BLUE-M,CB11D10-BLUE-L",
+          ats: "112,113,113"
+        },
+        {
+          upcs: "CB11E21-BLUE-S,CB11E21-BLUE-M,CB11E21-BLUE-L",
+          ats: "106,106,103"
+        },
+        {
+          upcs: "CB11E21-CORAL-S,CB11E21-CORAL-M,CB11E21-CORAL-L",
+          ats: "84,85,85"
+        },
+        {
+          upcs: "AAAAAAAAA-CORAL-XS",
+          ats: "1"
+        },
+        {
+          upcs: "CCTESTS-BLUE-XS,CCTESTS-BLUE-S,CCTESTS-BLUE-M,CCTESTS-BLUE-L",
+          ats: "93,93,95,96"
+        },
+        {
+          upcs: "CCTESTS-CORAL-XS,CCTESTS-CORAL-S,CCTESTS-CORAL-M,CCTESTS-CORAL-L",
+          ats: "1,1,1,1"
+        }
       ]
     end
 
-    let(:expected_required_data_result) do
+    let(:required_data_result) do
       [
-        { upc: "CB11D10-BLUE-S",     size: "S",  color: "BLUE",  style: "CB11D10",   sku: 4    },
-        { upc: "CB11D10-BLUE-M",     size: "M",  color: "BLUE",  style: "CB11D10",   sku: 4    },
-        { upc: "CB11D10-BLUE-L",     size: "L",  color: "BLUE",  style: "CB11D10",   sku: 4    },
-        { upc: "CB11E21-BLUE-S",     size: "S",  color: "BLUE",  style: "CB11E21",   sku: 9    },
-        { upc: "CB11E21-BLUE-M",     size: "M",  color: "BLUE",  style: "CB11E21",   sku: 9    },
-        { upc: "CB11E21-BLUE-L",     size: "L",  color: "BLUE",  style: "CB11E21",   sku: 9    },
-        { upc: "CB11E21-CORAL-S",    size: "S",  color: "CORAL", style: "CB11E21",   sku: 9    },
-        { upc: "CB11E21-CORAL-M",    size: "M",  color: "CORAL", style: "CB11E21",   sku: 9    },
-        { upc: "CB11E21-CORAL-L",    size: "L",  color: "CORAL", style: "CB11E21",   sku: 9    },
-        { upc: "AAAAAAAAA-CORAL-XS", size: "XS", color: "CORAL", style: "AAAAAAAAA", sku: 5509 },
-        { upc: "CCTESTS-BLUE-XS",    size: "XS", color: "BLUE",  style: "CCTESTS",   sku: 1827 },
-        { upc: "CCTESTS-BLUE-S",     size: "S",  color: "BLUE",  style: "CCTESTS",   sku: 1827 },
-        { upc: "CCTESTS-BLUE-M",     size: "M",  color: "BLUE",  style: "CCTESTS",   sku: 1827 },
-        { upc: "CCTESTS-BLUE-L",     size: "L",  color: "BLUE",  style: "CCTESTS",   sku: 1827 },
-        { upc: "CCTESTS-CORAL-XS",   size: "XS", color: "CORAL", style: "CCTESTS",   sku: 1827 },
-        { upc: "CCTESTS-CORAL-S",    size: "S",  color: "CORAL", style: "CCTESTS",   sku: 1827 },
-        { upc: "CCTESTS-CORAL-M",    size: "M",  color: "CORAL", style: "CCTESTS",   sku: 1827 },
-        { upc: "CCTESTS-CORAL-L",    size: "L",  color: "CORAL", style: "CCTESTS",   sku: 1827 }
+        {
+          upcs: "CB11D10-BLUE-S,CB11D10-BLUE-M,CB11D10-BLUE-L",
+          sizes: "S,M,L",
+          color: "BLUE",
+          style_number: "CB11D10",
+          internal_sku_number: 4
+        },
+        {
+          upcs: "CB11E21-BLUE-S,CB11E21-BLUE-M,CB11E21-BLUE-L",
+          sizes: "S,M,L",
+          color: "BLUE",
+          style_number: "CB11E21",
+          internal_sku_number: 9
+        },
+        {
+          upcs: "CB11E21-CORAL-S,CB11E21-CORAL-M,CB11E21-CORAL-L",
+          sizes: "S,M,L",
+          color: "CORAL",
+          style_number: "CB11E21",
+          internal_sku_number: 9
+        },
+        {
+          upcs: "AAAAAAAAA-CORAL-XS",
+          sizes: "XS",
+          color: "CORAL",
+          style_number: "AAAAAAAAA",
+          internal_sku_number: 5509
+        },
+        {
+          upcs: "CCTESTS-BLUE-XS,CCTESTS-BLUE-S,CCTESTS-BLUE-M,CCTESTS-BLUE-L",
+          sizes: "XS,S,M,L",
+          color: "BLUE",
+          style_number: "CCTESTS",
+          internal_sku_number: 1827
+        },
+        {
+          upcs: "CCTESTS-CORAL-XS,CCTESTS-CORAL-S,CCTESTS-CORAL-M,CCTESTS-CORAL-L",
+          sizes: "XS,S,M,L",
+          color: "CORAL",
+          style_number: "CCTESTS",
+          internal_sku_number: 1827
+        }
       ]
     end
+
+    let(:minimum_attrs)  { attrs.merge(minimal_results: true) }
+    let(:required_attrs) { attrs.merge(required_data_only: true) }
 
     it 'returns inventory response with minimal results' do
       # this VCR casset was recorded with valid credentials
-      inventory.minimal_results = true
-      inventory.save
-      expect(inventory.valid?).to eq(true)
-      expect(inventory.parsed_data).to eq(expected_minimal_result)
+      inventories = RlmLogistics::Record::Inventory.where(minimum_attrs)
+      attrs = inventories.collect(&:attributes).each do |attr|
+        attr.slice!(:upcs, :ats)
+      end
+      expect(inventories.size).to eq(6)
+      expect(inventories.first).to be_a(RlmLogistics::Record::Inventory)
+      expect(attrs).to eq(minimal_result)
     end
 
     it 'returns inventory response with required data' do
       # this VCR casset was recorded with valid credentials
-      inventory.required_data_only = true
-      inventory.save
-      expect(inventory.valid?).to eq(true)
-      expect(inventory.parsed_data).to eq(expected_required_data_result)
+      inventories = RlmLogistics::Record::Inventory.where(required_attrs)
+      attrs = inventories.collect(&:attributes).each do |attr|
+        attr.slice!(:upcs, :sizes, :color, :style_number, :internal_sku_number)
+      end
+      expect(inventories.size).to eq(6)
+      expect(inventories.first).to be_a(RlmLogistics::Record::Inventory)
+      expect(attrs).to eq(required_data_result)
     end
 
   end

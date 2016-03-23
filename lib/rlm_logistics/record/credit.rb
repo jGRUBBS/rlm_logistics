@@ -1,3 +1,5 @@
+require 'rlm_logistics/record/read_attributes/credit_read_attributes'
+
 module RlmLogistics
   module Record
     class Credit < Base

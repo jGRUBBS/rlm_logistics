@@ -1,3 +1,5 @@
+require 'rlm_logistics/record/read_attributes/packed_order_read_attributes'
+
 module RlmLogistics
   module Record
     class PackedOrder < Base

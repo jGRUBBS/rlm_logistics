@@ -1,3 +1,5 @@
+require 'rlm_logistics/record/read_attributes/item_read_attributes'
+
 module RlmLogistics
   module Record
     class Item < Base
@@ -20,10 +22,6 @@ module RlmLogistics
       attribute :limit_rows
 
       validates_presence_of :company_number
-
-      def parse(response)
-        @raw_data = response.data
-      end
 
     end
   end

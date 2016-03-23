@@ -6,7 +6,7 @@ module RlmLogistics
       hash             = Hash.from_xml(body_string)
       soap_body        = hash["Envelope"]["Body"]
       @parsed_response = soap_body["#{operation}Response"]["#{operation}Return"]
-      if valid?
+      if valid? && record_instance.respond_to?(:parse)
         record_instance.parse(self)
       else
         record_instance.errors.add(:base, response_message)
@@ -19,8 +19,11 @@ module RlmLogistics
     end
 
     def data
-      if record_instance.class.to_s.match(/inventory/i)
+      if record_instance.class.to_s.match(/inventory|item|packed/i)
         parsed_response["RESPONSE"]["DATA"]["RECSET"]["REC"]
+      elsif record_instance.class.to_s.match(/credit/i)
+        return nil if parsed_response["RESPONSE"]["DATA"]["RECSET"].nil?
+        parsed_response["RESPONSE"]["DATA"]["RECSET"]["REC"]["REC_DETAILS"]["DETAIL"]
       elsif record_instance.class.to_s.match(/salesorder/i)
         parsed_response["RESPONSE"]["ORDER_NUMBER"]
       else

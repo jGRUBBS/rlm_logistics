@@ -1,0 +1,316 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://www.ronlynn.com/TESTServices/services/PackedOrders
+    body:
+      encoding: UTF-8
+      string: |
+        <Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+          <Body>
+            <getSelected xmlns="http://ws.rlm.com">
+              <filterXML>
+        &lt;ITEM_FILTER&gt;
+        &lt;AUTHENTICATION&gt;
+        &lt;USERNAME&gt;XXUSER&lt;/USERNAME&gt;
+        &lt;KEY_VALUE&gt;XXKEY&lt;/KEY_VALUE&gt;
+        &lt;/AUTHENTICATION&gt;
+        &lt;COMPANY_NUMBER&gt;90&lt;/COMPANY_NUMBER&gt;
+        &lt;/ITEM_FILTER&gt;
+        </filterXML>
+            </getSelected>
+          </Body>
+        </Envelope>
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - text/xml; charset=utf-8
+      Soapaction:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Content-Type:
+      - text/xml;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Wed, 23 Mar 2016 21:34:20 GMT
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getSelectedResponse xmlns="http://ws.rlm.com"><getSelectedReturn>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+        &lt;RESPONSE&gt;
+        &lt;CODE&gt;1&lt;/CODE&gt;
+        &lt;DESCRIPTION&gt;Success&lt;/DESCRIPTION&gt;
+        &lt;DATA TABLENAME=&quot;PACKED_ORDERS&quot;&gt;
+        &lt;RECSET&gt;
+        &lt;REC&gt;&lt;COMPANY_NUMBER&gt;90&lt;/COMPANY_NUMBER&gt;
+        &lt;COMPANY_NAME&gt;Test Company TEST COMPANY&lt;/COMPANY_NAME&gt;
+        &lt;DIVISION_NUMBER&gt;10&lt;/DIVISION_NUMBER&gt;
+        &lt;DIVISION_NAME&gt;Test Company Test Div&lt;/DIVISION_NAME&gt;
+        &lt;CUSTOMER_NUMBER&gt;TESTING&lt;/CUSTOMER_NUMBER&gt;
+        &lt;CUSTOMER_NAME&gt;Test Account&lt;/CUSTOMER_NAME&gt;
+        &lt;STORE_NUMBER&gt;1&lt;/STORE_NUMBER&gt;
+        &lt;STORE_NAME&gt;Tim Test&lt;/STORE_NAME&gt;
+        &lt;STORE_EMAIL_ADDRESS&gt;&lt;/STORE_EMAIL_ADDRESS&gt;
+        &lt;RLM_ORDER_NUMBER&gt;2&lt;/RLM_ORDER_NUMBER&gt;
+        &lt;CUSTOMERPO_NUMBER&gt;55445&lt;/CUSTOMERPO_NUMBER&gt;
+        &lt;RLM_PICKTICKET_NUMBER&gt;1&lt;/RLM_PICKTICKET_NUMBER&gt;
+        &lt;PACKED_DATE&gt;20140401&lt;/PACKED_DATE&gt;
+        &lt;ROUTING_CODE&gt;UPS&lt;/ROUTING_CODE&gt;
+        &lt;ROUTING_DESCRIPTION&gt;UPS&lt;/ROUTING_DESCRIPTION&gt;
+        &lt;TRACKING_NUMBER&gt;&lt;/TRACKING_NUMBER&gt;
+        &lt;CLEARPATH_CUSTOMER_NUMBER&gt;&lt;/CLEARPATH_CUSTOMER_NUMBER&gt;
+        &lt;CLEARPATH_CUSTOMER_ID&gt;&lt;/CLEARPATH_CUSTOMER_ID&gt;
+        &lt;REC_DETAILS&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;4&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000041&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11D10&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;4&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Jaipur Jungle One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;S&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000054&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;2&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;319.00&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;4&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000041&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11D10&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;4&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Jaipur Jungle One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;M&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000061&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;2&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;319.00&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;4&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000041&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11D10&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;4&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Jaipur Jungle One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;L&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000078&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;2&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;319.00&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;/REC_DETAILS&gt;&lt;/REC&gt;
+        &lt;REC&gt;&lt;COMPANY_NUMBER&gt;90&lt;/COMPANY_NUMBER&gt;
+        &lt;COMPANY_NAME&gt;Test Company TEST COMPANY&lt;/COMPANY_NAME&gt;
+        &lt;DIVISION_NUMBER&gt;10&lt;/DIVISION_NUMBER&gt;
+        &lt;DIVISION_NAME&gt;Test Company Test Div&lt;/DIVISION_NAME&gt;
+        &lt;CUSTOMER_NUMBER&gt;TESTING&lt;/CUSTOMER_NUMBER&gt;
+        &lt;CUSTOMER_NAME&gt;Test Account&lt;/CUSTOMER_NAME&gt;
+        &lt;STORE_NUMBER&gt;1&lt;/STORE_NUMBER&gt;
+        &lt;STORE_NAME&gt;Tim Test&lt;/STORE_NAME&gt;
+        &lt;STORE_EMAIL_ADDRESS&gt;&lt;/STORE_EMAIL_ADDRESS&gt;
+        &lt;RLM_ORDER_NUMBER&gt;1&lt;/RLM_ORDER_NUMBER&gt;
+        &lt;CUSTOMERPO_NUMBER&gt;12356&lt;/CUSTOMERPO_NUMBER&gt;
+        &lt;RLM_PICKTICKET_NUMBER&gt;4&lt;/RLM_PICKTICKET_NUMBER&gt;
+        &lt;PACKED_DATE&gt;20140612&lt;/PACKED_DATE&gt;
+        &lt;ROUTING_CODE&gt;UPS&lt;/ROUTING_CODE&gt;
+        &lt;ROUTING_DESCRIPTION&gt;UPS&lt;/ROUTING_DESCRIPTION&gt;
+        &lt;TRACKING_NUMBER&gt;41346567567Y&lt;/TRACKING_NUMBER&gt;
+        &lt;CLEARPATH_CUSTOMER_NUMBER&gt;&lt;/CLEARPATH_CUSTOMER_NUMBER&gt;
+        &lt;CLEARPATH_CUSTOMER_ID&gt;&lt;/CLEARPATH_CUSTOMER_ID&gt;
+        &lt;REC_DETAILS&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;10&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000102&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11D10&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;4&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Jaipur Jungle One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;S&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000054&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;1&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;319.00&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;10&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000102&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11D10&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;4&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Jaipur Jungle One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;M&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000061&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;1&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;319.00&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;10&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000102&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11D10&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;4&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Jaipur Jungle One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;L&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000078&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;1&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;319.00&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;11&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000119&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11D10&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;4&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Jaipur Jungle One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;S&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000054&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;1&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;319.00&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;11&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000119&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11D10&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;4&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Jaipur Jungle One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;M&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000061&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;1&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;319.00&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;11&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000119&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11D10&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;4&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Jaipur Jungle One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;L&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000078&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;1&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;319.00&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;/REC_DETAILS&gt;&lt;/REC&gt;
+        &lt;REC&gt;&lt;COMPANY_NUMBER&gt;90&lt;/COMPANY_NUMBER&gt;
+        &lt;COMPANY_NAME&gt;Test Company TEST COMPANY&lt;/COMPANY_NAME&gt;
+        &lt;DIVISION_NUMBER&gt;10&lt;/DIVISION_NUMBER&gt;
+        &lt;DIVISION_NAME&gt;Test Company Test Div&lt;/DIVISION_NAME&gt;
+        &lt;CUSTOMER_NUMBER&gt;TESTING&lt;/CUSTOMER_NUMBER&gt;
+        &lt;CUSTOMER_NAME&gt;Test Account&lt;/CUSTOMER_NAME&gt;
+        &lt;STORE_NUMBER&gt;1&lt;/STORE_NUMBER&gt;
+        &lt;STORE_NAME&gt;Tim Test&lt;/STORE_NAME&gt;
+        &lt;STORE_EMAIL_ADDRESS&gt;&lt;/STORE_EMAIL_ADDRESS&gt;
+        &lt;RLM_ORDER_NUMBER&gt;6&lt;/RLM_ORDER_NUMBER&gt;
+        &lt;CUSTOMERPO_NUMBER&gt;32ABV&lt;/CUSTOMERPO_NUMBER&gt;
+        &lt;RLM_PICKTICKET_NUMBER&gt;6&lt;/RLM_PICKTICKET_NUMBER&gt;
+        &lt;PACKED_DATE&gt;20140707&lt;/PACKED_DATE&gt;
+        &lt;ROUTING_CODE&gt;UPS&lt;/ROUTING_CODE&gt;
+        &lt;ROUTING_DESCRIPTION&gt;UPS&lt;/ROUTING_DESCRIPTION&gt;
+        &lt;TRACKING_NUMBER&gt;&lt;/TRACKING_NUMBER&gt;
+        &lt;CLEARPATH_CUSTOMER_NUMBER&gt;&lt;/CLEARPATH_CUSTOMER_NUMBER&gt;
+        &lt;CLEARPATH_CUSTOMER_ID&gt;&lt;/CLEARPATH_CUSTOMER_ID&gt;
+        &lt;REC_DETAILS&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;13&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000133&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11D10&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;4&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Jaipur Jungle One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;S&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000054&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;2&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;319.00&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;13&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000133&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11D10&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;4&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Jaipur Jungle One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;M&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000061&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;2&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;319.00&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;13&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000133&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11D10&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;4&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Jaipur Jungle One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;L&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000078&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;2&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;319.00&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;14&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000140&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11D10&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;4&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Jaipur Jungle One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;S&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000054&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;2&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;319.00&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;14&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000140&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11D10&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;4&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Jaipur Jungle One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;M&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000061&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;1&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;319.00&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;14&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000140&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11D10&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;4&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Jaipur Jungle One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;L&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000078&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;2&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;319.00&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;15&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000157&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11E21&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;9&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Taj Mahal Necklace One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;S&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000085&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;2&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;86.50&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;15&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000157&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11E21&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;9&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Taj Mahal Necklace One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;M&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000092&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;2&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;86.50&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;DETAIL&gt;&lt;RLM_INTERNAL_CARTON_NUMBER&gt;15&lt;/RLM_INTERNAL_CARTON_NUMBER&gt;
+        &lt;CARTON_NUMBER&gt;00123450000000157&lt;/CARTON_NUMBER&gt;
+        &lt;SEASON_YEAR&gt;P13&lt;/SEASON_YEAR&gt;
+        &lt;STYLE&gt;CB11E21&lt;/STYLE&gt;
+        &lt;SKUNUMBER&gt;9&lt;/SKUNUMBER&gt;
+        &lt;STYLE_DESCRIPTION&gt;Test Taj Mahal Necklace One Piece&lt;/STYLE_DESCRIPTION&gt;
+        &lt;COLOR&gt;BLUE&lt;/COLOR&gt;
+        &lt;SIZE&gt;L&lt;/SIZE&gt;
+        &lt;UPC_NUMBER&gt;099999000108&lt;/UPC_NUMBER&gt;
+        &lt;UNITS&gt;2&lt;/UNITS&gt;
+        &lt;UNIT_PRICE&gt;86.50&lt;/UNIT_PRICE&gt;
+        &lt;/DETAIL&gt;&lt;/REC_DETAILS&gt;&lt;/REC&gt;&lt;/RECSET&gt;
+        &lt;/DATA&gt;&lt;/RESPONSE&gt;
+        </getSelectedReturn></getSelectedResponse></soapenv:Body></soapenv:Envelope>
+    http_version:
+  recorded_at: Wed, 23 Mar 2016 21:34:04 GMT
+recorded_with: VCR 2.9.3

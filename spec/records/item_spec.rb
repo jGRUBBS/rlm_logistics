@@ -2,15 +2,14 @@ require 'spec_helper'
 
 describe RlmLogistics::Record::Item do
 
-  let(:item) do
-    RlmLogistics::Record::Item.new(
-      company_number:  90,
-      division_number: 10,
-      retrieve_upcs:   "Y"
-    )
-  end
-
   describe '#as_soap' do
+    let(:item) do
+      RlmLogistics::Record::Item.new(
+        company_number:  90,
+        division_number: 10,
+        retrieve_upcs:   "Y"
+      )
+    end
     let(:item_xml) { xml_fixture(:item_request) }
 
     it 'returns a item object in xml format' do
@@ -19,10 +18,20 @@ describe RlmLogistics::Record::Item do
 
   end
 
-  describe '#save', :vcr do
+  describe '#where', :vcr do
+
+    let(:attrs) do
+      {
+        company_number:  90,
+        division_number: 10,
+        retrieve_upcs:   "Y"
+      }
+    end
+    let(:items) { RlmLogistics::Record::Item.where(attrs) }
 
     it 'returns item response' do
-      expect{ item.save }.not_to raise_error
+      expect(items.size).to eq(325)
+      expect(items.first).to be_a(RlmLogistics::Record::Item)
     end
 
   end
