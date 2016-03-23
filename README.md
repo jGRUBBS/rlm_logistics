@@ -2,6 +2,22 @@
 
 This is a Ruby library for interfacing with the [RLM](http://www2.ronlynn.com/) API.
 
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'rlm_logistics'
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install rlm_logistics
+
 ### Usage
 
 `config/inializer/rlm.rb`
@@ -156,3 +172,11 @@ sales_order.errors.full_messages
 sales_order.valid?
 # => false
 ```
+
+## Contributing
+
+1. Fork it ( https://github.com/[my-github-username]/active_record-remote/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
