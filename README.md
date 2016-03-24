@@ -1,5 +1,7 @@
 # RLM Logistics
 
+[![Build Status](https://travis-ci.org/jGRUBBS/rlm_logistics.svg?branch=master)](https://travis-ci.org/jGRUBBS/rlm_logistics)
+
 This is a Ruby library for interfacing with the [RLM](http://www2.ronlynn.com/) API.
 
 ## Installation
