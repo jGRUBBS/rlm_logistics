@@ -67,6 +67,10 @@ describe RlmLogistics::Record::Credit do
       expect(attrs).to eq(expected_result)
     end
 
+    it 'returns an empty array when the api returns an invalid response' do
+      expect(credits).to eq([])
+    end
+
     it 'returns an empty array if no results are found' do
       credits = RlmLogistics::Record::Credit.where(company_number: 90)
       expect(credits).to eq([])

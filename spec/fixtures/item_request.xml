@@ -2,16 +2,7 @@
   <Body>
     <getSelected xmlns="http://ws.rlm.com">
       <filterXML>
-&lt;ITEM_FILTER&gt;
-&lt;AUTHENTICATION&gt;
-&lt;USERNAME&gt;XXUSER&lt;/USERNAME&gt;
-&lt;KEY_VALUE&gt;XXKEY&lt;/KEY_VALUE&gt;
-&lt;/AUTHENTICATION&gt;
-&lt;COMPANY_NUMBER&gt;90&lt;/COMPANY_NUMBER&gt;
-&lt;DIVISION_NUMBER&gt;10&lt;/DIVISION_NUMBER&gt;
-&lt;RETRIEVE_UPCS&gt;Y&lt;/RETRIEVE_UPCS&gt;
-&lt;/ITEM_FILTER&gt;
-</filterXML>
+&lt;ITEM_FILTER&gt;&lt;AUTHENTICATION&gt;&lt;USERNAME&gt;XXUSER&lt;/USERNAME&gt;&lt;KEY_VALUE&gt;XXKEY&lt;/KEY_VALUE&gt;&lt;/AUTHENTICATION&gt;&lt;COMPANY_NUMBER&gt;90&lt;/COMPANY_NUMBER&gt;&lt;DIVISION_NUMBER&gt;10&lt;/DIVISION_NUMBER&gt;&lt;RETRIEVE_UPCS&gt;Y&lt;/RETRIEVE_UPCS&gt;&lt;/ITEM_FILTER&gt;</filterXML>
     </getSelected>
   </Body>
 </Envelope>

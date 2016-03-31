@@ -10,56 +10,7 @@ http_interactions:
           <Body>
             <create xmlns="http://ws.rlm.com">
               <orderXML>
-        &lt;order&gt;
-        &lt;authentication&gt;
-        &lt;username&gt;XXUSER&lt;/username&gt;
-        &lt;key_value&gt;XXKEY&lt;/key_value&gt;
-        &lt;/authentication&gt;
-        &lt;company&gt;10&lt;/company&gt;
-        &lt;division&gt;50&lt;/division&gt;
-        &lt;email&gt;customer@gmail.com&lt;/email&gt;
-        &lt;currency&gt;$&lt;/currency&gt;
-        &lt;orderDate&gt;20120115&lt;/orderDate&gt;
-        &lt;startDate&gt;20120115&lt;/startDate&gt;
-        &lt;cancelDate&gt;20120115&lt;/cancelDate&gt;
-        &lt;customerPO&gt;YOURPO#&lt;/customerPO&gt;
-        &lt;special01&gt;101&lt;/special01&gt;
-        &lt;special02&gt;102&lt;/special02&gt;
-        &lt;special03&gt;103&lt;/special03&gt;
-        &lt;special04&gt;104&lt;/special04&gt;
-        &lt;discount&gt;0.05&lt;/discount&gt;
-        &lt;addresses&gt;
-        &lt;address&gt;
-        &lt;name&gt;MyName&lt;/name&gt;
-        &lt;address1&gt;ad1&lt;/address1&gt;
-        &lt;address2&gt;ad2&lt;/address2&gt;
-        &lt;city&gt;Mycity&lt;/city&gt;
-        &lt;state&gt;NY&lt;/state&gt;
-        &lt;zip&gt;Myzip&lt;/zip&gt;
-        &lt;country_code&gt;USA&lt;/country_code&gt;
-        &lt;address_type&gt;S&lt;/address_type&gt;
-        &lt;/address&gt;
-        &lt;address&gt;
-        &lt;name&gt;MyName&lt;/name&gt;
-        &lt;address1&gt;ad10&lt;/address1&gt;
-        &lt;city&gt;Mycity&lt;/city&gt;
-        &lt;state&gt;NY&lt;/state&gt;
-        &lt;zip&gt;Myzip&lt;/zip&gt;
-        &lt;address_type&gt;B&lt;/address_type&gt;
-        &lt;/address&gt;
-        &lt;/addresses&gt;
-        &lt;details&gt;
-        &lt;line&gt;
-        &lt;SKUNumber&gt;100566&lt;/SKUNumber&gt;
-        &lt;style&gt;AE234033&lt;/style&gt;
-        &lt;color&gt;12MCL&lt;/color&gt;
-        &lt;size&gt;34&lt;/size&gt;
-        &lt;price&gt;10.99&lt;/price&gt;
-        &lt;quantity&gt;12&lt;/quantity&gt;
-        &lt;/line&gt;
-        &lt;/details&gt;
-        &lt;/order&gt;
-        </orderXML>
+        &lt;order&gt;&lt;authentication&gt;&lt;username&gt;XXUSER&lt;/username&gt;&lt;key_value&gt;XXKEY&lt;/key_value&gt;&lt;/authentication&gt;&lt;company&gt;10&lt;/company&gt;&lt;division&gt;50&lt;/division&gt;&lt;email&gt;customer@gmail.com&lt;/email&gt;&lt;currency&gt;$&lt;/currency&gt;&lt;orderDate&gt;20120115&lt;/orderDate&gt;&lt;startDate&gt;20120115&lt;/startDate&gt;&lt;cancelDate&gt;20120115&lt;/cancelDate&gt;&lt;customerPO&gt;YOURPO#&lt;/customerPO&gt;&lt;special01&gt;101&lt;/special01&gt;&lt;special02&gt;102&lt;/special02&gt;&lt;special03&gt;103&lt;/special03&gt;&lt;special04&gt;104&lt;/special04&gt;&lt;discount&gt;0.05&lt;/discount&gt;&lt;addresses&gt;&lt;address&gt;&lt;name&gt;MyName&lt;/name&gt;&lt;address1&gt;ad1&lt;/address1&gt;&lt;address2&gt;ad2&lt;/address2&gt;&lt;city&gt;Mycity&lt;/city&gt;&lt;state&gt;NY&lt;/state&gt;&lt;zip&gt;Myzip&lt;/zip&gt;&lt;country_code&gt;USA&lt;/country_code&gt;&lt;address_type&gt;S&lt;/address_type&gt;&lt;/address&gt;&lt;address&gt;&lt;name&gt;MyName&lt;/name&gt;&lt;address1&gt;ad10&lt;/address1&gt;&lt;city&gt;Mycity&lt;/city&gt;&lt;state&gt;NY&lt;/state&gt;&lt;zip&gt;Myzip&lt;/zip&gt;&lt;address_type&gt;B&lt;/address_type&gt;&lt;/address&gt;&lt;/addresses&gt;&lt;details&gt;&lt;line&gt;&lt;SKUNumber&gt;100566&lt;/SKUNumber&gt;&lt;style&gt;AE234033&lt;/style&gt;&lt;color&gt;12MCL&lt;/color&gt;&lt;size&gt;34&lt;/size&gt;&lt;price&gt;10.99&lt;/price&gt;&lt;quantity&gt;12&lt;/quantity&gt;&lt;/line&gt;&lt;/details&gt;&lt;/order&gt;</orderXML>
             </create>
           </Body>
         </Envelope>

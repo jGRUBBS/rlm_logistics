@@ -12,6 +12,8 @@ module RlmLogistics
         record_instance.errors.add(:base, response_message)
       end
       self
+    rescue REXML::ParseException => e
+      # The api returned an invalid response, html 500 error
     end
 
     def response_message
