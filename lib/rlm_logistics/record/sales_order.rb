@@ -33,6 +33,7 @@ module RlmLogistics
       attribute :shipping_amount, String,  as: :shippingAmount
       attribute :rush_pt,         String,  as: :rushPT
       attribute :bulk_flag,       String,  as: :bulkFlag
+      attribute :order_numbers,   Array,   internal: true
 
       has_many :addresses, strict: true
       has_many :details, collection: :line, strict: true
@@ -45,7 +46,12 @@ module RlmLogistics
       end
 
       def parse(response)
-        self.id = response.data.to_i
+        self.id = if response.data.is_a?(Array)
+          self.order_numbers = response.data.map(&:to_i)
+          response.data.first.to_i
+        else
+          response.data.to_i
+        end
       end
 
     end

@@ -26,8 +26,8 @@ describe RlmLogistics::Record::SalesOrder do
     }
   end
 
-  let(:sales_order) do
-    RlmLogistics::Record::SalesOrder.new(
+  let(:sales_order_attrs) do
+    {
       company_number:  90,
       division_number: 50,
       email:           "customer@gmail.com",
@@ -56,7 +56,11 @@ describe RlmLogistics::Record::SalesOrder do
           quantity:   1
         }
       ]
-    )
+    }
+  end
+
+  let(:sales_order) do
+    RlmLogistics::Record::SalesOrder.new(sales_order_attrs)
   end
 
   describe '#as_soap' do
@@ -73,6 +77,40 @@ describe RlmLogistics::Record::SalesOrder do
     it 'submits an order successfully' do
       sales_order.save
       expect(sales_order.id).not_to be_nil
+    end
+
+    context 'when order contains items from two divisions' do
+      let(:line_item_attrs) do
+        # the test account does not have items in multiple divisions
+        # this product is made up and the VCR casset is altered
+        {
+          sku_number: 42,
+          style:      "CS11D10",
+          color:      "RED",
+          size:       "S",
+          price:      11.99,
+          quantity:   1
+        }
+      end
+      let(:rlm_order_numbers) { [36, 37] }
+
+      context 'rlm returns two order numbers' do
+
+        before do
+          sales_order_attrs[:details] << line_item_attrs
+          sales_order.save
+        end
+
+        it 'stores record id as first id' do
+          expect(sales_order.id).to eq(rlm_order_numbers.first)
+        end
+
+        it 'stores order_numbers' do
+          expect(sales_order.order_numbers).to eq(rlm_order_numbers)
+        end
+
+      end
+
     end
 
     context 'invalid color' do
