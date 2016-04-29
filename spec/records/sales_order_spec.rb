@@ -30,11 +30,13 @@ describe RlmLogistics::Record::SalesOrder do
     {
       company_number:  90,
       division_number: 50,
+      store:           1,
       email:           "customer@gmail.com",
       currency:        "$",
       order_date:      20120115,
       start_date:      20120115,
       cancel_date:     20120115,
+      customer:        "WEB0000",
       customer_po:     "YOURPO#",
       special01:       101,
       special02:       102,

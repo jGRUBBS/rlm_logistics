@@ -2,7 +2,8 @@ module RlmLogistics
   module Record
     class SalesOrder < Base
 
-      action       "SalesOrderNoAccount"
+      # action       "SalesOrderNoAccount"
+      action       "SalesOrder"
       operation    "create"
       base_element "orderXML"
 
@@ -11,6 +12,7 @@ module RlmLogistics
       attribute :id
       attribute :company_number,  Integer, as: :company
       attribute :division_number, Integer, as: :division
+      attribute :store,           Integer, as: :store
       attribute :single_division, String,  as: :singleDivision
       attribute :email,           String,  as: :email
       attribute :currency,        String,  as: :currency
@@ -22,6 +24,7 @@ module RlmLogistics
       attribute :order_date,      Integer, as: :orderDate
       attribute :start_date,      Integer, as: :startDate
       attribute :cancel_date,     Integer, as: :cancelDate
+      attribute :customer,        String,  as: :customer
       attribute :customer_po,     String,  as: :customerPO
       attribute :special01,       String,  as: :special01
       attribute :special02,       String,  as: :special02
